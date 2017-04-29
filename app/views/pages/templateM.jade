@@ -1,0 +1,21 @@
+extends ../layouts/base
+doctype html
+html(lang="en")
+  head
+    title= title
+    link(href='../aui/css/aui.css', rel='stylesheet')
+    link(href='../aui/css/aui-experimental.css', rel='stylesheet') 
+    link(href='//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css', rel='stylesheet')
+    link(href='/css/heraapp-sass.css', rel='stylesheet')
+  body
+    include ../aui/header.ejs 
+    
+    div(class="aui-page-panel")
+      div(class="aui-page-panel-inner")
+        section(class="aui-page-panel-content")
+         
+          
+  footer(id="footer" role="contentinfo" data-module="components/footer")
+    include ../aui/footer.ejs
+    script(type='text/javascript', src='http://code.jquery.com/jquery-1.9.1.min.js')
+    script(src='/js/index2.js', type='text/javascript')

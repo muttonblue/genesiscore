@@ -1,0 +1,88 @@
+extends ../layouts/base
+doctype html
+html(lang="en")
+  head
+    block title
+      title= 'Home'
+  body
+    block content
+      h3 งานเวชทะเบียน
+      form(class="aui")
+        label(for="longfieldexample") ค้นหาผู้ป่วย
+        input(id="tags" class="text long-field" type="text" placeholder="Search"  name="longfieldexample")
+        button(class="aui-button aui-button-primary" type="submit" resolved="") ค้นหา
+        
+      div(class="aui-tabs horizontal-tabs")
+        ul(class="tabs-menu")
+          li(class="menu-item active-tab")
+            a(href="#tabs-1") ทั่วไป 1
+          li(class="menu-item")
+              a(href="#tabs-2") ทั่วไป 2
+          li(class="menu-item")
+              a(href="#tabs-3") ทั่วไป 3
+          li(class="menu-item")
+              a(href="#tabs-4") ครอบครัว
+          li(class="menu-item")
+              a(href="#tabs-5") โรคประจำตัว
+          li(class="menu-item")
+              a(href="#tabs-6") แฟ้มภาพ/ลายนิ้วมือ
+          li(class="menu-item")
+              a(href="#tabs-7") การเปลี่ยนชื่อ/HN
+          li(class="menu-item")
+              a(href="#tabs-8") ข้อมูลปกปิด
+          li(class="menu-item")
+              a(href="#tabs-9") ประวัติผู้ป่วย
+        
+        div(class="tabs-pane active-pane" id="tabs-1")
+          p 
+          div(class="aui-group")
+            div(class="aui-item") 
+              label(for="inline-help-example") ชื่อ
+              span(style="padding:3px;") 
+              input(class="text" type="text" id="tName" name="titleName" style="width:50px;") 
+              span(style="padding:3px;")
+              input(class="text" type="text" id="fname" name="fname")
+           
+            div(class="aui-item")
+              label(for="inline-help-example") นามสกุล
+              span(style="padding:3px;")
+              input(class="text" type="text" id="tName" name="titleName" style="width:50px;") 
+              span(style="padding:3px;")
+              input(class="text" type="text" id="fname" name="fname")
+            div(class="aui-item")
+              span xxx
+              
+        div(class="tabs-pane" id="tabs-2")
+          h2 This is tab 2
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          fieldset
+            legend
+              span Leave a comment
+            div(class="field-group")
+              label(for="textarea-id") Comment
+              textarea(class="textarea" name="comment" id="textarea-id" placeholder="Your comment here...")
+        div(class="tabs-pane" id="tabs-3")
+          h2 This is tab 3
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        div(class="tabs-pane" id="tabs-4")
+          h2 This is tab 4
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        div(class="tabs-pane" id="tabs-5")
+          h2 This is tab 5
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
+        div(class="tabs-pane" id="tabs-6")
+          h2 This is tab 6
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
+        div(class="tabs-pane" id="tabs-7")
+          h2 This is tab 7
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
+        div(class="tabs-pane" id="tabs-8")
+          h2 This is tab 8
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
+        div(class="tabs-pane" id="tabs-9")
+          h2 This is tab 9
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
+            
+ block scripts
+  script(src='/js/medical-record.js')
+  

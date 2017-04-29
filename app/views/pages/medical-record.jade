@@ -1,0 +1,56 @@
+extends ../layouts/base
+doctype html
+html(lang="en")
+  head
+    block title
+      title= 'Home'
+
+  body
+    block content
+      .row
+        .col-md-9
+          h4 งานเวชทะเบียน
+      .row
+        .col-md-6
+          .input-group
+            input(type="text" class="form-control form-control" placeholder="Search for...")
+            span.input-group-btn
+              button(class="btn btn-default" type=" button") ค้นหา
+        .col-md-3
+          div(class="btn-group" role="group" aria-label="Basic example")
+            button(type="button" class="btn btn-default") บันทึก
+            button(type="button" class="btn btn-default") แก้ไข
+            button(type="button" class="btn btn-default") ล้าง
+            button(type="button" class="btn btn-default") เปลี่ยน HN
+            button(type="button" class="btn btn-danger") ลบ
+      .row 
+        .col
+          hr
+      .row
+        .col
+          div.card.text-center
+            div.card-header
+              ul(class="nav nav-tabs card-header-tabs" role="tablist") 
+                include medical-record-tab/medical-record-header-tabs
+            div(class="tab-content")
+              div(class="tab-pane active  ", id="general1", role="tabpanel")
+                include medical-record-tab/medical-record-tab1
+              div(class="tab-pane", id="general2", role="tabpanel")
+                include medical-record-tab/medical-record-tab2
+              div(class="tab-pane", id="general3", role="tabpanel")
+                include medical-record-tab/medical-record-tab3
+              div(class="tab-pane" id="aa" role="tabpanel") 
+                include medical-record-tab/medical-record-tab2
+              div(class="tab-pane" id="medicalProblem" role="tabpanel")
+                include medical-record-tab/medical-record-tab5
+              div(class="tab-pane" id="cc" role="tabpanel")
+                include medical-record-tab/medical-record-tab4
+              div(class="tab-pane" id="dd" role="tabpanel")
+                include medical-record-tab/medical-record-tab5
+              div(class="tab-pane" id="ee" role="tabpanel")
+                include medical-record-tab/medical-record-tab5
+              div(class="tab-pane" id="ff" role="tabpanel")
+                include medical-record-tab/medical-record-tab6
+
+block scripts
+  script(src='/js/medical-record.js')

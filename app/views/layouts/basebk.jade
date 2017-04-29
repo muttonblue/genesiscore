@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+  head
+    block meta
+      meta(charset='utf-8')
+      meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    
+    block title
+      title= 'Welcome to Jade Template Engine'
+      
+    link(href='../aui/css/aui.css', rel='stylesheet')
+    link(href='../aui/css/aui-experimental.css', rel='stylesheet') 
+    link(href='//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css', rel='stylesheet')
+    link(href='/css/heraapp-sass.css', rel='stylesheet')
+      
+  body
+    include ../aui/header.ejs
+    
+    div(class="aui-page-panel")
+      div(class="aui-page-panel-inner")
+        section(class="aui-page-panel-content")
+          block content
+            //- Page content goes here   
+            h1= 'Jade Template Engine'
+
+  footer(id="footer" role="contentinfo" data-module="components/footer")
+    include ../aui/footer.ejs
+    
+  script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js')
+  script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+  script(src='http://cdnjs.cloudflare.com/ajax/libs/sinon.js/1.15.4/sinon.js')
+  script(src='../aui/js/aui.js')
+  script(src='../aui/js/aui-experimental.js')
+  script(src='../aui/js/aui-datepicker.js')
+  block scripts
+    script(src='/js/templateM.js')

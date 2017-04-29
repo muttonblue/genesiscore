@@ -1,0 +1,66 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    link(href='../aui/css/aui.css', rel='stylesheet')
+    link(href='../aui/css/aui-experimental.css', rel='stylesheet') 
+    link(href='//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css', rel='stylesheet')
+    link(href='/css/heraapp-sass.css', rel='stylesheet')
+  body
+    include ../aui/header.ejs 
+    
+    div(class="aui-page-panel")
+      div(class="aui-page-panel-inner")
+        section(class="aui-page-panel-content")
+          h1 Jafe - node template engine
+          h1= message
+          h3 Get userlogin
+          form(name='logout', method='GET', action='admin/user')
+            div
+              p Go to Adimn Page 
+              input(type='submit', value='GO !!')
+          div
+            p Click on the button to load /jquery/ 
+            div(id='state')
+            span
+            button(onclick='something()') Click
+          
+          if isLoggedIn
+            h3 You logged in.
+            form(name='logout', method='POST', action='logout')
+              div 
+                input(type='submit', value='Logout')
+            h3 Get userlogin.
+              div
+                button(name='getuserloing' , value='getuserloing')
+          else
+            form(name='login', method='POST', action='login')
+              div 
+                lable(for='email') Email
+                input(name='email', type='email', placeholder='youremail@email.com')
+              div
+                lable(for='password') Email
+                input(name='password', type='password', placeholder='password')
+              div
+                input(name='remember', type='checkbox', value='remember') 
+                | Remember Me
+              div
+                input(type='submit', value='Login')
+            
+          //img(src='/img/myspace256.png', alt='Logo')
+
+          #container.col
+            if youAreUsingJade
+              p You are anazing
+            else
+              p Get on it!
+            p.
+              Jade is a terse and simple
+              templating language with a
+              strong fucus on perfonmance
+              and powerful fearures.
+          
+  footer(id="footer" role="contentinfo" data-module="components/footer")
+    include ../aui/footer.ejs
+    script(type='text/javascript', src='http://code.jquery.com/jquery-1.9.1.min.js')
+    script(src='/js/index2.js', type='text/javascript')

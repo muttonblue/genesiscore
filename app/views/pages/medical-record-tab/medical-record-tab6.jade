@@ -1,0 +1,98 @@
+div &nbsp;
+.container-fluid 
+  form
+    //- ---------------------------------------------
+    div.form-group.row 
+      label.col-sm-1.col-form-label(for="fname") ชื่อ :
+      .col-sm-0
+        select#tname(class="custom-select")
+          option(selected) เลือก 
+          option(value="1") นาย
+          option(value="2") นาง
+          option(value="3") นางสาว
+      .col-sm
+        input#fname(type="text", class="form-control")
+      label.col-sm-1.col-form-label(for="fname") นามสกุล :
+      .col-sm
+        input#lname(type="text", class="form-control") 
+      
+    //- ---------------------------------------------
+    div.form-group.row 
+      label.col-sm-1.col-form-label(for="cname") ชื่อกลาง :
+      .col-sm-0
+        input#cname(type="text", class="form-control ") 
+      .col-sm-1.col-mr-0
+        button(type="button" class="btn btn-default") ไม่ทราบ
+      label.col-sm-1.col-form-label(for="career") อาชีพ :
+      .col-sm-0
+        select#career(class="custom-select")
+          option(selected) เลือก 
+          option(value="1") นักกฎหมาย
+          option(value="2") นักการเมือง
+          option(value="3") นักกิจกรรมบำบัด
+          option(value="3") นักเขียน
+          option(value="3") นักเขียนเงา
+          option(value="3") นักคณิตศาสตร์ประกันภัย
+          option(value="3") นักชีววิทยา
+          option(value="3") นักเต้นประกอบ
+          option(value="3") นักบัญชี
+          option(value="3") นักพากย์
+    //- ---------------------------------------------
+    div.form-group.row 
+      label.col-sm-1.col-form-label(for="fname") เพศ :
+      .col-sm-0
+        select#tname(class="custom-select")
+          option(selected) เลือก 
+          option(value="1") ชาย
+          option(value="2") หญิง
+      label.col-sm-1.col-form-label(for="brindDate") วันเกิด :
+      .col-sm-2
+        input#brindDate.form-control(type="text" data-date-format="mm/dd/yyyy hh:mm" )
+      label.col-sm-0.col-form-label(for="age") อายุ :
+      .col-sm-1
+        input#age(type="text", class="form-control")
+      label.col-sm-0.col-form-label(for="year") ปี : 
+      .col-sm-1
+        input#year(type="text", class="form-control") 
+      label.col-sm-0.col-form-label(for="month") เดือน : 
+      .col-sm-1
+        input#month(type="text", class="form-control")
+      label.col-sm-0.col-form-label(for="militaryStatus") สถานภาพ : 
+      .col-sm-1
+        select#militaryStatus(class="custom-select")
+          option(selected) เลือก 
+          option(value="1") โสด
+          option(value="2") สมรส
+    div.form-group.row
+      label.col-sm-1.col-form-label(for="language") ภาษา :
+      .col-sm-0
+        input#language(type="text", class="form-control") 
+      label.col-sm-1.col-form-label(for="cname") สัญชาติ :
+      .col-sm-0
+        input#cname(type="text", class="form-control ") 
+      label.col-sm-1.col-form-label(for="cname") เชื้อชาติ :
+      .col-sm-0
+        input#cname(type="text", class="form-control ")
+      label.col-sm-1.col-form-label(for="cname") ศาสนา :
+      .col-sm-0
+        input#cname(type="text", class="form-control ")
+    div.form-group.row
+      label.col-sm-1.col-form-label(for="language") หมู่เลือด :
+      .col-sm-0
+        input#language(type="text", class="form-control") 
+      label.col-sm-1.col-form-label(for="language") RN :
+      .col-sm-0
+        input#language(type="text", class="form-control") 
+      label.col-sm-1.col-form-label(for="language") แพ้ยา :
+      .col-sm-0
+        input#language(type="text", class="form-control") 
+    div.form-group.row
+      label.col-sm-1.col-form-label(for="language") เลขที่บัตรประชาชน :
+      .col-sm-0
+        input#language(type="text", class="form-control") 
+      label.col-sm-1.col-form-label(for="language") เลขที่ passport :
+      .col-sm-0
+        input#language(type="text", class="form-control") 
+      label.col-sm-1.col-form-label(for="language") เลขที่ ต่างดาว :
+      .col-sm-0
+        input#language(type="text", class="form-control")

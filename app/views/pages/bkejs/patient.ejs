@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../aui/head %>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body class="container">
+  <header>
+    <% include ../aui/header %>
+  </header>
+  <main>
+     <section id="content" role="main">
+      <% include ../aui/sidebar %>
+
+      <div class="aui-page-panel">
+          <div class="aui-page-panel-inner">
+              <section class="aui-page-panel-content">
+                  <!-- Page content goes here -->
+                  <h2>เวชระเบียน</h2>
+                  <form class="aui">
+                      <label for="longfieldexample">ค้นหาผู้ป่วย : </label>
+                      <input  id="tags" class="text long-field" type="text" placeholder="Search"  name="longfieldexample">
+                      <button class="aui-button aui-button-primary" type="submit" resolved="">ค้นหา</button>
+                  </form>
+
+                  <div class="aui-tabs horizontal-tabs">
+                    <ul class="tabs-menu">
+                        <li class="menu-item active-tab">
+                            <a href="#tabs-example-first">ประวัติผู้ป่วย</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#tabs-example-second">รายละเอียด</a>
+                        </li>
+                    </ul>
+                    <div class="tabs-pane active-pane" id="tabs-example-first">
+
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="aui-group">
+                          <div class="aui-item">
+                              <!-- your content here -->xxx
+                          </div>
+                          <div class="aui-item">
+                              <!-- your content here -->xxx
+                          </div>
+                      </div>
+                    </div>
+                    <div class="tabs-pane" id="tabs-example-second">
+                        <h2>This is tab 2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+
+
+              </section>   <!-- end Page content goes here -->
+          </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" role="contentinfo" data-module="components/footer">
+      <% include ../aui/footer %>
+  </footer>
+  <script>
+//     https://jqueryui.com/autocomplete/#default
+$( function() {
+  var availableTags = [
+    "ActionScript",
+    "AppleScript",
+    "Asp",
+    "BASIC",
+    "C",
+    "C++",
+    "Clojure",
+    "COBOL",
+    "ColdFusion",
+    "Erlang",
+    "Fortran",
+    "Groovy",
+    "Haskell",
+    "Java",
+    "JavaScript",
+    "Lisp",
+    "Perl",
+    "PHP",
+    "Python",
+    "Ruby",
+    "Scala",
+    "Scheme"
+  ];
+  $( "#tags" ).autocomplete({
+    source: availableTags
+  });
+
+  $( "#quicksearchid" ).autocomplete({
+    source: availableTags
+  });
+
+} );
+</script>
+
+  <script src="../js/patient.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</body>
+</html>
