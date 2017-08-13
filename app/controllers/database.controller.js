@@ -1,8 +1,16 @@
-var PAGE = 'pages/database';
+var PAGE = 'pages/database'; 
+
 exports.render = function(req, res) {
   res.render(PAGE, {
     title: "Mogodb"
   }); //jade
+};
+
+exports.getConnetion = function(req, res) {
+  let app = req.app, result_func = {};
+  app.get("users.findOne")((data) => {
+    res.send( data );
+  });
 };
 
 exports.find = function(req, res) {

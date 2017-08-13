@@ -13,7 +13,7 @@ exports.login = function(req, res){
   password = body.password,
   remember = body.rememver;
 
-console.log('>> login');
+  console.log('>> login');
   console.log(body);
   console.log('Email: ' + email);
   console.log('Password: ' + password);

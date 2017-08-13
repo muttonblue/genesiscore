@@ -6,5 +6,6 @@ module.exports = function(app){
   app.post('/heraapp/pages/database/add' , controller.add);
   app.post('/heraapp/pages/database/edit' , controller.edit);
   app.post('/heraapp/pages/database/delete' , controller.delete);
+  app.post('/heraapp/pages/database/getConnetion' , controller.getConnetion);
 
 };

@@ -1,16 +1,24 @@
 var express = require('express');
-var morgan = require('morgan');
+var morgan = require('morgan');// log requests to the console (express4)
 var compression = require('compression');
-var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');// pull information from HTML POST (express4)
 var path = require('path');
 var sass = require('node-sass-middleware');
 var cookieSession = require('cookie-session');
 var expressSession = require('express-session');
+var mongoose = require('mongoose');                     // mongoose for mongodb
+var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
+var conf = require('./conf'); // simulate DELETE and PUT (express4)
 
 module.exports = function() {
-  var app = express();
+ console.info('>>> START reder express.js >>>');
+ console.log('conf : ' + JSON.stringify(conf) );
+
+
+  var app = express(); // create our app w/ express
   //verify NODE_EVN
-  if(process.env.NODE_EVN === 'development') {
+  let nodeEvn = process.env.NODE_EVN || 'development';
+  if(nodeEvn === 'development') {
     app.use(morgan('dev'));
   }else {
     app.use(morgan('compression'));
@@ -28,7 +36,9 @@ module.exports = function() {
   }));
   app.use(bodyParser.json());
 
-  // set the view engine to ejs
+
+
+  /* === set the view engine to ejs === **/
   //  app.set('view engine', 'ejs');
   app.set('view engine', 'jade');
   app.set('views', './app/views');
@@ -44,7 +54,7 @@ module.exports = function() {
 
  // Automatically apply the `requireLogin` middleware to all
  app.all("/heraapp/pages/*", requireLogin, function(req, res, next) {
-   console.log('>> userLogin: ' + req.session.userlogin);
+   console.log('L userLogin: ' + req.session.userlogin);
    if(req.session.userlogin === 'abc@gmail.com'){
      res.redirect("/heraapp/home");
    }else {
@@ -54,7 +64,7 @@ module.exports = function() {
 
  // routes starting with `/admin`
  app.all("/admin/*", requireLogin, function(req, res, next) {
-   console.log('>> secret page: ');
+   console.log('>> secret page: ' + (new Date()));
    console.log('>> userLogin: ' + req.session.userlogin);
    if(req.session.userlogin === 'abc@gmail.com'){
      res.redirect("/heraapp/home");
@@ -62,6 +72,10 @@ module.exports = function() {
       next();
    }
  });
+// ====================
+// database
+require('../app/database/users.database')(app);
+
  // Routes
   require('../app/routes/index.routes')(app);
   require('../app/routes/home.routes')(app);
@@ -81,5 +95,7 @@ module.exports = function() {
   }));
 
   app.use(express.static('public'));
+
+  console.info('<<< END reder express.js <<<');
   return app;
 };
